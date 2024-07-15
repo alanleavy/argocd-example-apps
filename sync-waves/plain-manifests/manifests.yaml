@@ -36,8 +36,8 @@ kind: ReplicaSet
 metadata:
   name: backend
   annotations:
-    argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync-wave: "0"
+    #argocd.argoproj.io/hook: Sync
+    #argocd.argoproj.io/sync-wave: "0"
 spec:
   replicas: 1
   selector:
@@ -57,8 +57,8 @@ kind: Service
 metadata:
   name: backend
   annotations:
-    argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync-wave: "0"
+    #argocd.argoproj.io/hook: Sync
+    #argocd.argoproj.io/sync-wave: "0"
 spec:
   selector:
     tier: backend
@@ -72,7 +72,7 @@ kind: Job
 metadata:
   name: maint-page-up
   annotations:
-    argocd.argoproj.io/hook: Sync
+    #argocd.argoproj.io/hook: Sync
     argocd.argoproj.io/sync-wave: "1"
 spec:
   template:
@@ -89,7 +89,7 @@ kind: ReplicaSet
 metadata:
   name: frontend
   annotations:
-    argocd.argoproj.io/hook: Sync
+    #argocd.argoproj.io/hook: Sync
     argocd.argoproj.io/sync-wave: "2"
 spec:
   replicas: 1
@@ -110,7 +110,7 @@ kind: Service
 metadata:
   name: frontend
   annotations:
-    argocd.argoproj.io/hook: Sync
+    #argocd.argoproj.io/hook: Sync
     argocd.argoproj.io/sync-wave: "2"
 spec:
   selector:
@@ -125,7 +125,7 @@ kind: Job
 metadata:
   name: maint-page-down
   annotations:
-    argocd.argoproj.io/hook: Sync
+    #argocd.argoproj.io/hook: Sync
     argocd.argoproj.io/sync-wave: "3"
 spec:
   template:
